@@ -1,0 +1,2 @@
+# BackendForNewsClips
+for news clips
