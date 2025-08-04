@@ -3,4 +3,7 @@ Flask==2.2.2
 flask_cors
 requests
 sumy
+setuptools
+wheel
+gunicorn
 lxml_html_clean
