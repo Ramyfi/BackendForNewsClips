@@ -22,6 +22,10 @@ CORS(app)
 LANGUAGE = "english" 
 SENTENCES_COUNT = 4 # The count of sentences to which the articles will be summarized.
 
+@app.route('/')
+def index():
+    return "API is up and running!"
+
 @app.route('/api/summary', methods=['GET']) #Endpoint of the api
 def hello_world(): 
     response = requests.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=649fd9f8a3cb46bf9da57a9f1116cfa7") # open source news api
@@ -45,3 +49,4 @@ def hello_world():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Render sets PORT dynamically
     app.run(host="0.0.0.0", port=port)
+
