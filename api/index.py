@@ -8,6 +8,7 @@ from flask import Flask
 from flask_cors import CORS
 
 import requests
+import nltk
 
 from sumy.parsers.html import HtmlParser
 from sumy.parsers.plaintext import PlaintextParser
@@ -15,6 +16,17 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer as Summarizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
+
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('tokenizers/punkt_tab/english')
+except LookupError:
+    nltk.download('punkt_tab')
 
 app = Flask(__name__) #Flask helps us to implement backend in Python
 CORS(app)
@@ -49,4 +61,5 @@ def hello_world():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Render sets PORT dynamically
     app.run(host="0.0.0.0", port=port)
+
 
