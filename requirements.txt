@@ -1,5 +1,5 @@
 numpy>=1.26
-Flask==2.2.2
+Flask>=2.3.0
 flask_cors
 requests
 sumy
@@ -8,3 +8,4 @@ wheel
 gunicorn
 lxml_html_clean
 pip>=23.1
+
