@@ -39,5 +39,9 @@ def hello_world():
     return data #returning the modified response to Next.js frontend.
   
 
+# if __name__ == '__main__':
+#     app.run(port=5328) #Running the server on port 5328 locally. Also deployed the app on Versel. Please refer to README.md file.
+
 if __name__ == '__main__':
-    app.run(port=5328) #Running the server on port 5328 locally. Also deployed the app on Versel. Please refer to README.md file.
+    port = int(os.environ.get("PORT", 5000))  # Render sets PORT dynamically
+    app.run(host="0.0.0.0", port=port)
