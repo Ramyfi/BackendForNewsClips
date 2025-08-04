@@ -1,9 +1,10 @@
-numpy==1.24.3
+numpy>=1.26
 Flask==2.2.2
 flask_cors
 requests
 sumy
-setuptools
+setuptools>=65.5.0
 wheel
 gunicorn
 lxml_html_clean
+pip>=23.1
